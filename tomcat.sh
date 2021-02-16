@@ -27,7 +27,7 @@ sudo cp ./tomcat.service /etc/systemd/system/tomcat.service
 sudo systemctl daemon-reload 
 sudo systemctl start tomcat 
 sudo systemctl enable tomcat 
-systemctl status tomcat 
+#systemctl status tomcat 
 
 #Firewall 
 sudo firewall-cmd --permanent --add-port=8080/tcp 
