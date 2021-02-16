@@ -2,7 +2,6 @@
 #sudo yum update
 #sudo yum -y -qq install git
 #git clone https://github.com/tecnologirl/migration
-#vi tomcat.sh
 #chmod +x tomcat.sh
 #./tomcat.sh
 
