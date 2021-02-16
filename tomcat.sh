@@ -12,7 +12,7 @@ sudo groupadd --system tomcat
 sudo useradd -d /usr/share/tomcat -r -s /bin/false -g tomcat tomcat 
 
 #instalación de java
-sudo yum install java-1.8.0-openjdk-devel
+sudo yum -y install java-1.8.0-openjdk-devel
 
 #instalación tomcat
 sudo yum -y install wget 
