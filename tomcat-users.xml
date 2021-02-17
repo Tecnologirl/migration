@@ -19,12 +19,6 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://tomcat.apache.org/xml tomcat-users.xsd"
               version="1.0">
-<role rolename="admin-gui"/>
-<role rolename="manager-gui"/>
-<role rolename="manager-script"/>
-<role rolename="manager-jmx"/>
-<user username="admin" password="admin" fullname="Administrator" roles="admin-gui,manager-gui,manager-script,manager-jmx"/>
-
 <!--
   NOTE:  By default, no user is included in the "manager-gui" role required
   to operate the "/manager/html" web application.  If you wish to use this app,
@@ -47,4 +41,9 @@
   <user username="both" password="<must-be-changed>" roles="tomcat,role1"/>
   <user username="role1" password="<must-be-changed>" roles="role1"/>
 -->
+  <role rolename="manager"/>
+  <role rolename="manager-gui"/>
+  <user username="admin" password="admin" roles="manager"/>
+  <user username="tomcat" password="tomcat" roles="manager-gui";
+
 </tomcat-users>
