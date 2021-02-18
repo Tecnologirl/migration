@@ -31,7 +31,7 @@ sudo cp tomcat-users.xml /usr/share/tomcat/conf/tomcat-users.xml
 sudo mkdir /usr/share/tomcat/conf/sslkey
 sudo cp sslkey/webserverkey /usr/share/tomcat/conf/sslkey/webserverkey
 #agregamos el archivo con la dirección del ssl actualizada
-sudo cp server.xml /usr/share/tomcat/conf/server.xml
+#sudo cp server.xml /usr/share/tomcat/conf/server.xml
 
 #Probando el servidor
 sudo systemctl daemon-reload
