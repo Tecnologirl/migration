@@ -65,4 +65,3 @@ sudo setsebool -P nis_enabled 1
 sudo systemctl restart httpd && sudo systemctl enable httpd
 sudo systemctl stop tomcat
 sudo systemctl start tomcat
-
