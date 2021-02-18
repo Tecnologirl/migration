@@ -24,14 +24,14 @@ sudo chown -R tomcat:tomcat /usr/share/apache-tomcat-$VER/
 
 #Archivo .service para ejecutar los comandos de Tomcat (start, stop, etc)
 #Hay que cambiar la ip sudo vim /etc/systemd/system/tomcat.service
-sudo cp ./tomcat.service /etc/systemd/system/tomcat.service
+sudo cp tomcat.service /etc/systemd/system/tomcat.service
 #agregamos el archivo con los usuarios
-sudo cp ./tomcat-users.xml /usr/share/tomcat/conf/tomcat-users.xml
+sudo cp tomcat-users.xml /usr/share/tomcat/conf/tomcat-users.xml
 #agregamos el certificado ssl
 sudo mkdir /usr/share/tomcat/conf/sslkey
-sudo cp ./sslkey/webserverkey /usr/share/tomcat/conf/sslkey/webserverkey
+sudo cp sslkey/webserverkey /usr/share/tomcat/conf/sslkey/webserverkey
 #agregamos el archivo con la dirección del ssl actualizada
-sudo cp ./server.xml /usr/share/tomcat/conf/server.xml
+sudo cp server.xml /usr/share/tomcat/conf/server.xml
 
 #Probando el servidor
 sudo systemctl daemon-reload
@@ -55,7 +55,7 @@ sudo vi /usr/share/tomcat/conf/tomcat-users.xml
 #revisar lo del proxy
 sudo yum -y install httpd
 #/etc/httpd/conf.d/tomcat_manager.conf
-sudo cp ./tomcat_manager.conf /etc/httpd/conf.d/tomcat_manager.conf
+sudo cp tomcat_manager.conf /etc/httpd/conf.d/tomcat_manager.conf
 
 sudo setsebool -P httpd_can_network_connect 1
 sudo setsebool -P httpd_can_network_relay 1
