@@ -27,7 +27,7 @@ sudo chown -R tomcat:tomcat /usr/share/apache-tomcat-$VER/
 #sudo vim /etc/systemd/system/tomcat.service
 sudo cp ./tomcat.service /etc/systemd/system/tomcat.service
 #agregamos el archivo con los usuarios
-sudo cp ./tomcat-users.xml /usr/share/tomcat/conf/tomcat-users.xml
+#sudo cp ./tomcat-users.xml /usr/share/tomcat/conf/tomcat-users.xml
 #agregamos el certificado ssl
 sudo mkdir /usr/share/tomcat/conf/sslkey
 sudo cp ./sslkey/webserverkey /usr/share/tomcat/conf/sslkey/webserverkey
@@ -43,7 +43,8 @@ sudo systemctl enable tomcat
 #Firewall
 sudo firewall-cmd --permanent --add-port=8080/tcp
 sudo firewall-cmd --permanent --add-port=8443/tcp
-sudo firewall-cmd –reload
+sudo firewall-cmd --permanent --add-port=443/tcp
+#sudo firewall-cmd –reload
 
 #Agregando usuarios
 #sudo vi /usr/share/tomcat/conf/tomcat-users.xml
@@ -59,4 +60,6 @@ sudo setsebool -P httpd_graceful_shutdown 1
 sudo setsebool -P nis_enabled 1
 
 sudo systemctl restart httpd && sudo systemctl enable httpd
+sudo systemctl stop tomcat
+sudo systemctl start tomcat
 
