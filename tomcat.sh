@@ -37,7 +37,7 @@ sudo cp server.xml /usr/share/tomcat/conf/server.xml
 sudo systemctl daemon-reload
 sudo systemctl start tomcat
 sudo systemctl enable tomcat
-#systemctl status tomcat
+#sudo systemctl status tomcat
 
 #Firewall
 sudo yum install firewalld
@@ -50,7 +50,7 @@ sudo systemctl enable firewalld
 sudo systemctl reload firewalld
 
 #Agregando usuarios
-sudo vi /usr/share/tomcat/conf/tomcat-users.xml
+#sudo vi /usr/share/tomcat/conf/tomcat-users.xml
 
 #revisar lo del proxy
 sudo yum -y install httpd
