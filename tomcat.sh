@@ -44,8 +44,6 @@ sudo yum install firewalld
 sudo firewall-cmd --permanent --add-port=8080/tcp
 sudo firewall-cmd --permanent --add-port=8443/tcp
 sudo firewall-cmd --permanent --add-port=443/tcp
-sudo firewall-cmd --zome=public --permanent --add-service=http
-sudo firewall-cmd --zome=public --permanent --add-service=https
 sudo systemctl start firewalld
 sudo systemctl enable firewalld
 #sudo systemctl status firewalld
@@ -67,5 +65,3 @@ sudo setsebool -P nis_enabled 1
 sudo systemctl restart httpd && sudo systemctl enable httpd
 sudo systemctl stop tomcat
 sudo systemctl start tomcat
-
-sudo cp postgresql-42.2.18.jar /usr/share/tomcat/common/lib/
