@@ -84,9 +84,11 @@
          Either JSSE or OpenSSL style configuration may be used regardless of
          the SSLImplementation selected. JSSE style configuration is used below.
     -->
-
+<!-- keystoreFile ="/usr/share/tomcat/sslkey/webserverkey" keystorePass="keystore">
+-->
     <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
-               maxThreads="150" SSLEnabled="true">
+               maxThreads="150" SSLEnabled="true"
+               >
         <SSLHostConfig>
             <Certificate certificateKeystoreFile="/usr/share/tomcat/sslkey/webserverkey"
                          type="RSA"
@@ -131,7 +133,7 @@
     <Engine name="Catalina" defaultHost="localhost">
 <Context privileged="true" antiResourceLocking="false"
          docBase="${catalina.home}/webapps/manager">
-    <Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="^YOUR.IP.ADDRESS.HERE$" />
+    <Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="0.0.0.0" />
 </Context>
       <!--For clustering, please take a look at documentation at:
           /docs/cluster-howto.html  (simple how to)

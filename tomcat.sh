@@ -49,19 +49,3 @@ sudo systemctl enable firewalld
 #sudo systemctl status firewalld
 sudo systemctl reload firewalld
 
-#Agregando usuarios
-#sudo vi /usr/share/tomcat/conf/tomcat-users.xml
-
-#revisar lo del proxy
-sudo yum -y install httpd
-#/etc/httpd/conf.d/tomcat_manager.conf
-sudo cp tomcat_manager.conf /etc/httpd/conf.d/tomcat_manager.conf
-
-sudo setsebool -P httpd_can_network_connect 1
-sudo setsebool -P httpd_can_network_relay 1
-sudo setsebool -P httpd_graceful_shutdown 1
-sudo setsebool -P nis_enabled 1
-
-sudo systemctl restart httpd && sudo systemctl enable httpd
-sudo systemctl stop tomcat
-sudo systemctl start tomcat
