@@ -68,9 +68,7 @@
     -->
     <Connector port="8080" protocol="HTTP/1.1"
                connectionTimeout="20000"
-               redirectPort="8443"
-		useIPVHosts="true"
-		address="0.0.0.0" />
+               redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -93,7 +91,6 @@
             <Certificate certificateKeystoreFile="/usr/share/tomcat/sslkey/webserverkey"
                          type="RSA"
 			certificateKeystorePassword="keystore" />
-       			
 	 </SSLHostConfig>
     </Connector>
     <!-- Define an SSL/TLS HTTP/1.1 Connector on port 8443 with HTTP/2
@@ -132,7 +129,7 @@
     <Engine name="Catalina" defaultHost="localhost" jvmRoute="jvm1">
     -->
     <Engine name="Catalina" defaultHost="localhost">
-<Context privileged="true" antiResourceLocking="false" 
+<Context privileged="true" antiResourceLocking="false"
          docBase="${catalina.home}/webapps/manager">
     <Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="^YOUR.IP.ADDRESS.HERE$" />
 </Context>
@@ -172,7 +169,7 @@
  	<Valve className="org.apache.catalina.valves.RemoteAddrValve"
       allow="\d+\.\d+\.\d+\.\d+" />
 
-			
+
 
       </Host>
     </Engine>
