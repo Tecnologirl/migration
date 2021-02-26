@@ -44,6 +44,16 @@ sudo cp ./manager/context.xml /usr/share/tomcat/webapps/manager/META-INF/context
 #configurar los usuarios:
 #vim /usr/local/tomcat/conf/tomcat-users.xml
 
+#Firewall
+sudo yum install firewalld
+sudo firewall-cmd --permanent --add-port=8080/tcp
+sudo firewall-cmd --permanent --add-port=8443/tcp
+sudo firewall-cmd --permanent --add-port=443/tcp
+sudo systemctl start firewalld
+sudo systemctl enable firewalld
+#sudo systemctl status firewalld
+sudo systemctl reload firewalld
+
 #Probando el servidor
 sudo systemctl daemon-reload
 sudo systemctl start tomcat
