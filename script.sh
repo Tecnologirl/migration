@@ -3,7 +3,7 @@
 #sudo yum -y -qq install git
 #git clone https://github.com/tecnologirl/migration
 #cd migration
-#chmod +x tomcat.sh
+#chmod +x script.sh
 #./script.sh
 
 #Se crea el grupo de usuarios
@@ -27,7 +27,7 @@ sudo chown -R tomcat:tomcat /usr/share/apache-tomcat-$VER/
 sudo cp tomcat.service /etc/systemd/system/tomcat.service
 
 #agregamos el archivo con los usuarios
-sudo cp tomcat-users.xml /usr/share/tomcat/conf/tomcat-users.xml
+sudo cp ./conf/tomcat-users.xml /usr/share/tomcat/conf/tomcat-users.xml
 #agregamos el certificado ssl
 sudo mkdir /usr/share/tomcat/conf/sslkey
 sudo cp sslkey/webserverkey /usr/share/tomcat/conf/sslkey/webserverkey
